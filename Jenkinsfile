@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    tools{
+        //This points to the global tool configuration name for maven installation available on Jenkins
+        maven 'maven-3.9.9'
+        git 'git'
+    }
     environment{
         Test_Var = "Value1"
         CRED = credentials('gitlab_jenkinsuser')
