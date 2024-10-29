@@ -18,7 +18,7 @@ pipeline {
                 {
                       echo PASSWORD
                       //Available as env variable
-                      sh 'echo $USERNAME'
+                      sh "echo $USERNAME"
                       //Available as groovy variable
                       echo USERNAME 
                       // String 
