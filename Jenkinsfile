@@ -23,6 +23,8 @@ pipeline {
                       echo USERNAME 
                       // String 
                       echo "Test $USERNAME"
+
+                    sh "git clone https://35.200.169.39/java/helloworld.git"
   
               }
               
