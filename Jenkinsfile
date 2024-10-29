@@ -24,7 +24,7 @@ pipeline {
                       // String 
                       echo "Test $USERNAME"
 
-                    sh "git clone https://35.200.169.39/java/helloworld.git"
+                    sh "git clone https://gitlab-1-vm/java/helloworld.git"
   
               }
               
