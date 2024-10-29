@@ -8,7 +8,7 @@ pipeline {
         stage("init") {
             steps {
               withCredentials([
-                      usernamePassword(credentials:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
+                      usernamePassword(credentialsId:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
                   ])
                 {
                       echo PASSWORD
