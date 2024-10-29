@@ -21,6 +21,15 @@ pipeline {
               echo "deploying"            
             }         
         }
-    }   
+    }
+    post {
+        always{
+            echo "Run this always"
+        }
+        failure{
+            echo "On failure"
+        }
+    }
+    
 }
 
