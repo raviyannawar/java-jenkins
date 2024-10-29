@@ -2,11 +2,18 @@ pipeline {
     agent any
     environment{
         Test_Var = "Value1"
+        CRED = credentials('gitlab_jenkinsuser')
     }
     stages {
         stage("init") {
             steps {
-              echo "initializing"
+              withCredentials([
+                      usernamePassword(credentials:'gitlab_jenkinsuser', userVar: USER,  pwdVar : PWD)
+                  ]){
+                
+                  echo "initializing" +  "$userVar" + "$pwdVar"
+              }
+              
             }
         }
         stage("build") {
