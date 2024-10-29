@@ -11,13 +11,7 @@ pipeline {
                       usernamePassword(credentials:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
                   ])
                 {
-                      echo PASSWORD
-                      //Available as env variable
-                      sh 'echo $USERNAME'
-                      //Available as groovy variable
-                      echo USERNAME 
-                      // String 
-                      echo "Test $USERNAME"
+
   
               }
               
