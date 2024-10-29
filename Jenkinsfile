@@ -8,7 +8,7 @@ pipeline {
         stage("init") {
             steps {
               withCredentials([
-                      usernamePassword(credentials:'gitlab_jenkinsuser', userVar: 'USERNAME',  pwdVar : 'PASSWORD')
+                      usernamePassword(credentials:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
                   ]){
                 
                   echo "initializing" +  "$userVar" + "$pwdVar"
@@ -23,7 +23,16 @@ pipeline {
         }
         stage("test") {
             steps {
-              echo "testing"+ "$Test_Var"
+              
+              echo PASSWORD
+              //Available as env variable
+              sh 'echo $USERNAME'
+              //Available as groovy variable
+              echo USERNAME 
+              // String 
+              echo "Test $USERNAME"
+              
+                
             }
         }
         stage("deploy") {
