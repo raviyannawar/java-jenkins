@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment{
+        Test_Var = "Value1"
+    }
     stages {
         stage("init") {
             steps {
@@ -13,7 +16,7 @@ pipeline {
         }
         stage("test") {
             steps {
-              echo "testing"            
+              echo "testing"+ "$Test_Var"
             }
         }
         stage("deploy") {
