@@ -17,16 +17,20 @@ pipeline {
                   ])
                 {
                     script{
-                      def URL = "https://${USERNAME}:${PASSWORD}@gitlab-1-vm/java/helloworld.git"
-                          
-                      sh "git clone ${URL}"
-                     
                       //Available as env variable
                       sh "echo $USERNAME"
                       //Available as groovy variable
                       echo USERNAME 
                       // String 
                       echo "Test $USERNAME"
+                        
+                      def URL = "https://${USERNAME}:${PASSWORD}@gitlab-1-vm/java/helloworld.git"
+
+                      echo URL
+                        
+                      sh "git clone ${URL}"
+                     
+
                     }      
               }
               
