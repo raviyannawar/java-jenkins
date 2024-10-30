@@ -16,8 +16,8 @@ pipeline {
                       usernamePassword(credentialsId:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
                   ])
                 {
-                     sh 'ping -c 4 gitlab-1-vm'
-                      echo PASSWORD
+                     sh 'git clone https://${USERNAME}:${PASSWORD}@gitlab-1-vm/java/helloworld.git'
+                     
                       //Available as env variable
                       sh "echo $USERNAME"
                       //Available as groovy variable
