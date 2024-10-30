@@ -16,6 +16,7 @@ pipeline {
                       usernamePassword(credentialsId:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
                   ])
                 {
+                     sh 'ping -c 4 gitlab-1-vm'
                       echo PASSWORD
                       //Available as env variable
                       sh "echo $USERNAME"
