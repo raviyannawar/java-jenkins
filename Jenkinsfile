@@ -16,7 +16,9 @@ pipeline {
                       usernamePassword(credentialsId:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
                   ])
                 {
-                     sh 'git clone https://${USERNAME}:${PASSWORD}@gitlab-1-vm/java/helloworld.git'
+                      def URL = "https://${USERNAME}:${PASSWORD}@gitlab-1-vm/java/helloworld.git"
+                          
+                      sh "git clone ${URL}"
                      
                       //Available as env variable
                       sh "echo $USERNAME"
