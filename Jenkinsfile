@@ -11,9 +11,7 @@ pipeline {
     stages {
         stage("init") {
             steps {
-              withCredentials([
-                   withCredentials([string(credentialsId: 'group-access-token', variable: 'TOKEN')]) 
-                  ])
+                withCredentials([string(credentialsId: 'group-access-token', variable: 'TOKEN')]) 
                 {
                     script{
                       //Available as env variable
