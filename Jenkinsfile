@@ -6,6 +6,7 @@ pipeline {
         git 'git'
     }
     environment{
+        def var1 = "first"
     }
     stages {
         stage("init") {
