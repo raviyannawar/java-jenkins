@@ -15,15 +15,16 @@ pipeline {
                 {
                     script{
                       //Available as env variable
-                      sh "echo $USERNAME"
+                      //sh "echo $USERNAME"
                       //Available as groovy variable
-                      echo USERNAME 
+                      //echo USERNAME 
                       // String 
-                      echo "Test $USERNAME"
-                      def URL = "https://$TOKEN@gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
-                      echo URL
-                      sh "git clone ${URL}"
-                     
+                      //echo "Test $USERNAME"
+                      //def URL = "https://$TOKEN@gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
+                      //echo URL
+                      //sh "git clone ${URL}"
+
+                      sh "git clone https://${GITLAB_TOKEN}@gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
 
                     }      
               }
