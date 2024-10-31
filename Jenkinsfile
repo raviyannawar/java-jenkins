@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                withCredentials([string(credentialsId: 'group-access-token', variable: 'TOKEN')]) 
+                withCredentials([string(credentialsId: 'gitlab-secret', variable: 'GITLAB_TOKEN')]) 
                 {
                     script{
                       //Available as env variable
