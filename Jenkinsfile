@@ -13,7 +13,7 @@ pipeline {
         stage("init") {
             steps {
               withCredentials([
-                      usernamePassword(credentialsId:'gitlab_jenkinsuser', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
+                   withCredentials([string(credentialsId: 'group-access-token', variable: 'TOKEN')]) 
                   ])
                 {
                     script{
@@ -23,11 +23,8 @@ pipeline {
                       echo USERNAME 
                       // String 
                       echo "Test $USERNAME"
-                        
-                      def URL = "https://${USERNAME}:${PASSWORD}@gitlab-1-vm/java/helloworld.git"
-
+                      def URL = "https://$TOKEN@gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
                       echo URL
-                        
                       sh "git clone ${URL}"
                      
 
