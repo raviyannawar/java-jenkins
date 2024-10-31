@@ -12,6 +12,7 @@ pipeline {
         stage("init") {
             steps {
                 withCredentials([gitUsernamePassword(credentialsId: 'jenkins-user', gitToolName: 'git-tool')]) {
+                      sh "rm -rf firstjava"
                       sh "git clone -c http.sslVerify=false https://gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
                 }
               }
