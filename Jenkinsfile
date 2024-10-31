@@ -24,7 +24,7 @@ pipeline {
                       //echo URL
                       //sh "git clone ${URL}"
 
-                      sh "git clone https://${GITLAB_TOKEN}@gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
+                      sh "git clone -c http.sslVerify=false https://${GITLAB_TOKEN}@gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
 
                     }      
               }
