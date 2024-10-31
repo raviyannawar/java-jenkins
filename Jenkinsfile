@@ -18,7 +18,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                 sh 'ping -c 4 gitlab-1-vm'
+                 echo "Build"
             }
         }
         stage("test") {
