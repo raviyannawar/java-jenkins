@@ -6,8 +6,6 @@ pipeline {
         git 'git'
     }
     environment{
-        Test_Var = "Value1"
-        CRED = credentials('gitlab_jenkinsuser')
     }
     stages {
         stage("init") {
