@@ -12,7 +12,7 @@ pipeline {
         stage("init") {
             steps {
                  withCredentials([
-                      usernamePassword(credentialsId:'jenkins-user', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
+                      usernamePassword(credentialsId:'jenkins-user', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')])
                  {
                     script{
                       //Available as env variable
