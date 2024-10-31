@@ -11,8 +11,9 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                withCredentials([string(credentialsId: 'gitlab-secret', variable: 'GITLAB_TOKEN')]) 
-                {
+                 withCredentials([
+                      usernamePassword(credentialsId:'jenkins-user', usernameVariable: 'USERNAME',  passwordVariable : 'PASSWORD')
+                 {
                     script{
                       //Available as env variable
                       //sh "echo $USERNAME"
@@ -24,7 +25,7 @@ pipeline {
                       //echo URL
                       //sh "git clone ${URL}"
 
-                      sh "git clone -c http.sslVerify=false https://${GITLAB_TOKEN}@gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
+                      sh "git clone -c http.sslVerify=false https://gitlab-2-vm.asia-south1-a.c.marketdata-web-project.internal/java-group/firstjava.git"
 
                     }      
               }
