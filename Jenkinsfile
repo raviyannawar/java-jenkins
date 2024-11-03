@@ -20,6 +20,7 @@ pipeline {
         stage("build") {
             steps {
                  echo "Build"
+                 sh "cd firstjava"
                  sh "mvn clean install"
             }
         }
