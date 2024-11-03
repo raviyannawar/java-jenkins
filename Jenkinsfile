@@ -20,6 +20,7 @@ pipeline {
         stage("build") {
             steps {
                  echo "Build"
+                 sh "sudo chmod +x ./scripts/build.sh"
                  sh "./scripts/build.sh"
             }
         }
