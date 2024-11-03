@@ -1,2 +1,2 @@
-cd firstjava;
+cd ../firstjava;
 mvn clean install;
