@@ -1,2 +1,3 @@
-cd ../firstjava;
+pwd;
+cd firstjava;
 mvn clean install;
