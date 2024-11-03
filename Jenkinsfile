@@ -20,9 +20,10 @@ pipeline {
         stage("build") {
             steps {
                  echo "Build"
-                 sh "pwd"
-                 sh "cd firstjava"
-                 sh "mvn clean install"
+                 sh "'"
+                  cd firstjava
+                  mvn clean install
+                 "'"
             }
         }
         stage("test") {
