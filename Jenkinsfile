@@ -19,11 +19,12 @@ pipeline {
         }
         stage("build") {
             steps {
-                withCredentials([gitUsernamePassword(credentialsId: 'jenkins-user', gitToolName: 'git-tool')]) {
+                withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', 
+                                                     usernameVariable: 'GITLAB_USER', 
+                                                     passwordVariable: 'GITLAB_TOKEN')]) {
                  echo "Build"
                  sh "chmod +x ./scripts/build.sh"
                  sh "./scripts/build.sh"
-                }
             }
         }
         stage("test") {
