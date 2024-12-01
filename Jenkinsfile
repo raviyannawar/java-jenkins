@@ -19,7 +19,7 @@ pipeline {
         }
         stage("build") {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'gitlab-credentials', 
+                withCredentials([usernamePassword(credentialsId: 'jenkins-user', 
                                                      usernameVariable: 'GITLAB_USER', 
                                                      passwordVariable: 'GITLAB_TOKEN')]) {
                     echo "Build"
